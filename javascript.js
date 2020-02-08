@@ -12,10 +12,16 @@ $.ajax({
 console.log(data);
   for(i=0;i<data.length;i++){
       var latLng = new google.maps.LatLng(data[i].latitude,data[i].longitude);
+      var icon = {
+        url: "https://image.flaticon.com/icons/svg/477/477155.svg",
+        scaledSize: new google.maps.Size(20,20),
+        origin: new google.maps.Point(0,0),
+        anchor: new google.maps.Point(0,0)
+      };
       var newPin = new google.maps.Marker({
         position: latLng,
         map: map,
-        icon: "https://image.flaticon.com/icons/svg/477/477155.svg",
+        icon: icon,
       });
       console.log(newPin)
   }
@@ -28,7 +34,7 @@ var map, infoWindow;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 41.8781, lng: -87.6298},
-    zoom: 6
+    zoom: 9
   });
   infoWindow = new google.maps.InfoWindow;
 
