@@ -26,7 +26,8 @@ for(i=0;i<10;i++){
  page++; 
 }
 
-=======
+
+
 //GMAPS GEOLOCATION FUNCTION
 var map, infoWindow;
 function initMap() {
