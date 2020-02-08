@@ -1,5 +1,7 @@
+$(document).foundation();
 
 var year = 2020;
+
 
 $.ajax({
   url: "https://data.cityofchicago.org/resource/ijzp-q8t2.json?primary_type=HOMICIDE&year=" + year,

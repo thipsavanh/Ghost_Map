@@ -7,3 +7,20 @@
     margin: 0;
     padding: 0;
   }
+
+  .menu{
+    background-color: rgb(50, 49, 49);
+    font-size: 30px;
+  }
+
+  a{
+    color: ghostwhite;
+  }
+
+  a:hover{
+    color: red;
+  }
+
+  #years{
+    font-size: 15px;
+  }
