@@ -1,26 +1,63 @@
 #map {
     height: 100%;
+   
   }
   /* Optional: Makes the sample page fill the window. */
-  html, body {
+html, body {
     height: 100%;
     margin: 0;
     padding: 0;
   }
 
-  .menu{
-    background-color: rgb(50, 49, 49);
-    font-size: 30px;
+/* menu css */
+nav{
+   background-color: rgb(36, 35, 35);
+   font-family: 'Lacquer', sans-serif;
   }
 
-  a{
+.brand-logo{
+    margin-left: 20px;
+  }
+
+a{
+   color: ghostwhite;
+  }
+
+a:hover{
+   color: red;
+  }
+
+.dropdown-content li>a{
+    background-color: rgb(36, 35, 35);
     color: ghostwhite;
-  }
-
-  a:hover{
-    color: red;
-  }
-
-  #years{
     font-size: 15px;
   }
+
+.dropdown-content li>a:hover{
+    color: red;
+  }
+ 
+  /* footer css */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+    flex: 1 0 auto;
+  }
+
+.footer-copyright{
+  background-color: rgb(36, 35, 35);
+  color: ghostwhite;
+  text-align: center;
+  height: 50px;
+  font-family: 'Lacquer', sans-serif;
+}
+
+.container{
+  margin-top: 10px;
+}
+
+
