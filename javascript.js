@@ -1,8 +1,23 @@
 $(".dropdown-trigger").dropdown();
 
 var year = 2020;
+var markersArray = [];
+
+function clearOverlays() {
+
+  for (var i = 0; i < markersArray.length; i++ ) {
+
+    markersArray[i].setMap(null);
+
+  }
+
+  markersArray.length = 0;
+
+}
 
 function renderChicago(){
+  clearOverlays();
+
   $.ajax({
     url: "https://data.cityofchicago.org/resource/ijzp-q8t2.json?primary_type=HOMICIDE&year=" + year,
     type: "GET",
@@ -20,11 +35,12 @@ function renderChicago(){
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(0, 0)
       };
-      new google.maps.Marker({
+      var marker = new google.maps.Marker({
         position: latLng,
         map: map,
         icon: icon,
-      });
+      })
+      markersArray.push(marker);
     }
 
   });
