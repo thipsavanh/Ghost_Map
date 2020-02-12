@@ -2,14 +2,7 @@ $(".dropdown-trigger").dropdown();
 
 var year = 2020;
 
-
-$(".year").on("click", function(){
-
-  year = $(this).text()
-
-})
-
-$("#Chicago").on("click", function(){
+function renderChicago(){
   $.ajax({
     url: "https://data.cityofchicago.org/resource/ijzp-q8t2.json?primary_type=HOMICIDE&year=" + year,
     type: "GET",
@@ -35,7 +28,17 @@ $("#Chicago").on("click", function(){
     }
 
   });
+}
+
+$(".year").on("click", function(){
+
+  year = $(this).text()
+  
+  renderChicago();
 })
+
+$("#Chicago").on("click", renderChicago())
+
 
 //$("#Houston").on("click",function(){
 //  var settings = {
