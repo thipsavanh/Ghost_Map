@@ -10,14 +10,13 @@ function clearOverlays() {
   for (var i = 0; i < markersArray.length; i++) {
 
     markersArray[i].setMap(null);
-
   }
-
   markersArray.length = 0;
-
 }
 
+
 function renderChicago() {
+
   clearOverlays();
 
   $.ajax({
@@ -67,16 +66,14 @@ function renderChicago() {
 }
 
 
-
-
-
-
-$(".year").on("click", function () {
-
+$(".year").on("click", function(){
   year = $(this).text()
+  $("ul").append($(this).text());
 
   renderChicago();
 })
+
+
 
 $("#Chicago").on("click", renderChicago())
 
