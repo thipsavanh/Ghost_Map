@@ -17,6 +17,7 @@ nav{
 
 .brand-logo{
     margin-left: 20px;
+    max-width: 400px;
   }
 
 a{
@@ -41,7 +42,11 @@ a:hover{
     margin-right: 20px;
     padding-right: 20px;
   }
-
+li.displayYear{
+  font-size: 50px;
+  color: red;
+  margin-right: 20px;
+}
 
  
   /* footer css */
