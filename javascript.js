@@ -74,8 +74,7 @@ function renderChicago() {
 
 $(".year").on("click", function(){
   year = $(this).text()
-  $("#textYear").text($(this).text())
-
+  $(".displayYear").text($(this).text());
 
   renderChicago();
 })
