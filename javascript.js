@@ -11,7 +11,6 @@ function clearOverlays() {
 
     markersArray[i].setMap(null);
   }
-<<<<<<< HEAD
   for (var i = 0; i < windowsArray.length; i++) {
 
     windowsArray[i] = ""
@@ -19,9 +18,6 @@ function clearOverlays() {
   }
   windowsArray.length = 0
   markersArray.length = 0
-=======
-  markersArray.length = 0;
->>>>>>> 44ea9866669e2e2bbe64c60800bf3930b31e5153
 }
 
 
@@ -78,9 +74,8 @@ function renderChicago() {
 
 $(".year").on("click", function(){
   year = $(this).text()
-  $("ul").append($(this).text());
-
   $("#textYear").text($(this).text())
+
 
   renderChicago();
 })
