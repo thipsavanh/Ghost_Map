@@ -30,7 +30,7 @@ function renderChicago(){
     for (i = 0; i < data.length; i++) {
       var latLng = new google.maps.LatLng(data[i].latitude, data[i].longitude);
       var icon = {
-        url: "https://image.flaticon.com/icons/svg/1030/1030345.svg",
+        url: "https://image.flaticon.com/icons/svg/1727/1727571.svg",
         scaledSize: new google.maps.Size(20, 20),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(0, 0)
@@ -40,6 +40,7 @@ function renderChicago(){
         map: map,
         icon: icon,
       })
+      console.log(icon);
       markersArray.push(marker);
     }
 
