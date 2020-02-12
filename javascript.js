@@ -2,7 +2,7 @@ $(".dropdown-trigger").dropdown();
 
 var year = 2020;
 var markersArray = []
-var windowArray = []
+var windowsArray = []
 
 
 function clearOverlays() {
@@ -10,14 +10,23 @@ function clearOverlays() {
   for (var i = 0; i < markersArray.length; i++) {
 
     markersArray[i].setMap(null);
+  }
+<<<<<<< HEAD
+  for (var i = 0; i < windowsArray.length; i++) {
+
+    windowsArray[i] = ""
 
   }
-
+  windowsArray.length = 0
+  markersArray.length = 0
+=======
   markersArray.length = 0;
-
+>>>>>>> 44ea9866669e2e2bbe64c60800bf3930b31e5153
 }
 
+
 function renderChicago() {
+
   clearOverlays();
 
   $.ajax({
@@ -48,12 +57,12 @@ function renderChicago() {
 
       var windowContent = "id:" + data[i].id + "<br>" + "date:" + data[i].date + "<br>" + "arrest:" + data[i].arrest + "<br>" + data[i].description 
 
-      windowArray.push(windowContent)
+      windowsArray.push(windowContent)
 
       google.maps.event.addListener(marker, "click", (function (marker) {
         return function () {
-          console.log(windowArray[marker.index])
-          var content = windowArray[marker.index];
+          console.log(windowsArray[marker.index])
+          var content = windowsArray[marker.index];
           infowindow.setContent(content);
           infowindow.open(map, marker);
         }
@@ -67,16 +76,16 @@ function renderChicago() {
 }
 
 
-
-
-
-
-$(".year").on("click", function () {
-
+$(".year").on("click", function(){
   year = $(this).text()
+  $("ul").append($(this).text());
+
+  $("#textYear").text($(this).text())
 
   renderChicago();
 })
+
+
 
 $("#Chicago").on("click", renderChicago())
 
