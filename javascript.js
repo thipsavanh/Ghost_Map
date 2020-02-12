@@ -26,10 +26,9 @@ $("#Chicago").on("click", function(){
         icon: icon,
       });
     }
+
   });
 })
-
-
 
 //$("#Houston").on("click",function(){
 //  var settings = {
@@ -48,7 +47,6 @@ $("#Chicago").on("click", function(){
 //})
 
 
-//GMAPS GEOLOCATION FUNCTION
 var map, infoWindow;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
