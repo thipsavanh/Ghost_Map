@@ -36,6 +36,13 @@ a:hover{
 .dropdown-content li>a:hover{
     color: red;
   }
+
+.ul.right{
+    margin-right: 20px;
+    padding-right: 20px;
+  }
+
+
  
   /* footer css */
 body {
