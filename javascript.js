@@ -1,17 +1,28 @@
 $(".dropdown-trigger").dropdown();
 
 var year = 2020;
-var markersArray = [];
+var markersArray = []
+var windowsArray = []
+
 
 function clearOverlays() {
-  for (var i = 0; i < markersArray.length; i++ ) {
+
+  for (var i = 0; i < markersArray.length; i++) {
+
     markersArray[i].setMap(null);
   }
-  markersArray.length = 0;
+  for (var i = 0; i < windowsArray.length; i++) {
+
+    windowsArray[i] = ""
+
+  }
+  windowsArray.length = 0
+  markersArray.length = 0
 }
 
-function renderChicago(){
-  
+
+function renderChicago() {
+
   clearOverlays();
 
   $.ajax({
@@ -24,6 +35,7 @@ function renderChicago(){
   }).done(function (data) {
     console.log(data);
     for (i = 0; i < data.length; i++) {
+//      console.log(i)
       var latLng = new google.maps.LatLng(data[i].latitude, data[i].longitude);
       var icon = {
         url: "https://image.flaticon.com/icons/svg/1727/1727571.svg",
@@ -35,17 +47,35 @@ function renderChicago(){
         position: latLng,
         map: map,
         icon: icon,
+        index: i
       })
-      console.log(icon);
+      var infowindow = new google.maps.InfoWindow();
+
+      var windowContent = "id:" + data[i].id + "<br>" + "date:" + data[i].date + "<br>" + "arrest:" + data[i].arrest + "<br>" + data[i].description 
+
+      windowsArray.push(windowContent)
+
+      google.maps.event.addListener(marker, "click", (function (marker) {
+        return function () {
+          console.log(windowsArray[marker.index])
+          var content = windowsArray[marker.index];
+          infowindow.setContent(content);
+          infowindow.open(map, marker);
+        }
+      })(marker));
+
+
       markersArray.push(marker);
     }
 
   });
 }
 
+
 $(".year").on("click", function(){
   year = $(this).text()
   $(".displayYear").text($(this).text());
+
   renderChicago();
 })
 
@@ -64,10 +94,10 @@ $("#Chicago").on("click", renderChicago())
 //    },
 //    "data": JSON.stringify({"limit":2000,"offset":0,"geoJson":{"type":"Polygon","coordinates":[[[-95.21193246938286,29.633016298340156],[-95.49414377309341,29.633016298340156],[-95.49414377309341,29.876231861139374],[-95.21193246938286,29.876231861139374],[-95.21193246938286,29.633016298340156]]]},"projection":true,"propertyMap":{"toDate":"2019-12-31T23:59:59.999Z","fromDate":"2019-02-09T00:00:00.000Z","pageSize":"2000","parentIncidentTypeIds":"104","zoomLevel":"12","latitude":"29.75469785392927","longitude":"-95.35303812123814","days":"1,2,3,4,5,6,7","startHour":"0","endHour":"24","timezone":"+00:00","agencyIds":"108041,102850,99615,92757,84016,1281,1188,1143,1133,956"}}),
 //  };
-  
+
 //  $.ajax(settings).done(function (response) {
- //   console.log(response);
- // });
+//   console.log(response);
+// });
 //})
 
 
@@ -81,13 +111,13 @@ function initMap() {
 }
 
 // MONSTER MASH MUSIC
-var myMusic= document.getElementById("music");
+var myMusic = document.getElementById("music");
 function play() {
-myMusic.play();
+  myMusic.play();
 }
 
 function pause() {
-myMusic.pause();
+  myMusic.pause();
 }
 
 
