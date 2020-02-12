@@ -2,6 +2,13 @@ $(".dropdown-trigger").dropdown();
 
 var year = 2020;
 
+
+$(".year").on("click", function(){
+
+  year = $(this).text()
+
+})
+
 $("#Chicago").on("click", function(){
   $.ajax({
     url: "https://data.cityofchicago.org/resource/ijzp-q8t2.json?primary_type=HOMICIDE&year=" + year,
