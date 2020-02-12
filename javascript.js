@@ -2,7 +2,7 @@ $(".dropdown-trigger").dropdown();
 
 var year = 2020;
 var markersArray = []
-var windowArray = []
+var windowsArray = []
 
 
 function clearOverlays() {
@@ -11,7 +11,13 @@ function clearOverlays() {
 
     markersArray[i].setMap(null);
   }
-  markersArray.length = 0;
+  for (var i = 0; i < windowsArray.length; i++) {
+
+    windowsArray[i] = ""
+
+  }
+  windowsArray.length = 0
+  markersArray.length = 0
 }
 
 
@@ -47,12 +53,12 @@ function renderChicago() {
 
       var windowContent = "id:" + data[i].id + "<br>" + "date:" + data[i].date + "<br>" + "arrest:" + data[i].arrest + "<br>" + data[i].description 
 
-      windowArray.push(windowContent)
+      windowsArray.push(windowContent)
 
       google.maps.event.addListener(marker, "click", (function (marker) {
         return function () {
-          console.log(windowArray[marker.index])
-          var content = windowArray[marker.index];
+          console.log(windowsArray[marker.index])
+          var content = windowsArray[marker.index];
           infowindow.setContent(content);
           infowindow.open(map, marker);
         }
@@ -68,7 +74,8 @@ function renderChicago() {
 
 $(".year").on("click", function(){
   year = $(this).text()
-  $("ul").append($(this).text());
+  $("#textYear").text($(this).text())
+
 
   renderChicago();
 })
