@@ -15,13 +15,9 @@ nav{
    font-family: 'Lacquer', sans-serif;
   }
 
-.brand-logo{
+a.brand-logo{
     margin-left: 20px;
     max-width: 400px;
-  }
-
-a{
-   color: ghostwhite;
   }
 
 a:hover{
@@ -43,9 +39,18 @@ a:hover{
     padding-right: 20px;
   }
 li.displayYear{
-  font-size: 50px;
+  font-size: 40px;
   color: red;
   margin-right: 20px;
+}
+
+#mobile-nav{
+  font-family: 'Lacquer', sans-serif;
+  background-color:rgb(36, 35, 35) ;
+}
+
+.sidenav li>a{
+  color: ghostwhite;
 }
 
  
