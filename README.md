@@ -17,5 +17,5 @@
  <p>Crimeometer</p>
  
  <h2>Tasks</h2>
- <p>do it</p>
+ <p>Get API Keys to work.</p> <br>Build MVP.<br>Create a menu bar where users can interact by choosing year and location of crime. <br>Display 'ghost' icons on locations of murders <br>Create an information box that outlines detail of the crime upon clicking on 'ghost' icon. <br>Ensure event listeners are properly working. <br>Have 'Monster Mash' play while app is in use. <br>
  

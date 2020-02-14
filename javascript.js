@@ -1,28 +1,28 @@
-$(".dropdown-trigger").dropdown();
+
+
+$(document).ready(function(){
+  $(".dropdown-trigger").dropdown();
+  $(".sidenav").sidenav();
+  
+})
+
 
 var year = 2020;
 var markersArray = []
 var windowsArray = []
 
-
 function clearOverlays() {
-
   for (var i = 0; i < markersArray.length; i++) {
-
     markersArray[i].setMap(null);
   }
   for (var i = 0; i < windowsArray.length; i++) {
-
     windowsArray[i] = ""
-
   }
   windowsArray.length = 0
   markersArray.length = 0
 }
 
-
 function renderChicago() {
-
   clearOverlays();
 
   $.ajax({
@@ -49,8 +49,8 @@ function renderChicago() {
         icon: icon,
         index: i
       })
-      var infowindow = new google.maps.InfoWindow();
 
+      var infowindow = new google.maps.InfoWindow();
       var windowContent = "id:" + data[i].id + "<br>" + "date:" + data[i].date + "<br>" + "arrest:" + data[i].arrest + "<br>" + data[i].description 
 
       windowsArray.push(windowContent)
@@ -63,26 +63,19 @@ function renderChicago() {
           infowindow.open(map, marker);
         }
       })(marker));
-
-
       markersArray.push(marker);
     }
 
   });
 }
 
-
 $(".year").on("click", function(){
   year = $(this).text()
   $(".displayYear").text($(this).text());
-
   renderChicago();
 })
 
-
-
 $("#Chicago").on("click", renderChicago())
-
 
 //$("#Houston").on("click",function(){
 //  var settings = {
@@ -99,7 +92,6 @@ $("#Chicago").on("click", renderChicago())
 //   console.log(response);
 // });
 //})
-
 
 var map, infoWindow;
 function initMap() {
@@ -119,5 +111,3 @@ function play() {
 function pause() {
   myMusic.pause();
 }
-
-
