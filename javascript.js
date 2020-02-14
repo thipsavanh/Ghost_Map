@@ -51,8 +51,8 @@ function renderChicago() {
       })
 
       var infowindow = new google.maps.InfoWindow();
-      var windowContent = "id:" + data[i].id + "<br>" + "date:" + data[i].date + "<br>" + "arrest:" + data[i].arrest + "<br>" + data[i].description 
-
+      var windowContent = "ID: " + data[i].id + "<br>" + "Date: " + data[i].date + "<br>" + "Arrest Made: " + data[i].arrest + "<br>" + data[i].description 
+        
       windowsArray.push(windowContent)
 
       google.maps.event.addListener(marker, "click", (function (marker) {
