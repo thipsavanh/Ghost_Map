@@ -14,7 +14,9 @@
  
  <h2>APIs</h2>
  <p>Google Maps</p>
+
  <p>Chicago Public Database</p>
+
  
  <h2>Tasks</h2>
  <p>Get API Keys to work. <br>Build MVP.<br>Create a menu bar using CSS where users can interact by choosing year of crime. <br>Display 'ghost' icons on locations of murders. <br>Create an information box that outlines detail of the crime upon clicking on a 'ghost' icon. <br>Ensure event listeners are properly working. <br>Have 'Monster Mash' play. <br>
