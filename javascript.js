@@ -1,11 +1,7 @@
-
-
 $(document).ready(function(){
   $(".dropdown-trigger").dropdown();
-  $(".sidenav").sidenav();
-  
+  $(".sidenav").sidenav(); 
 })
-
 
 var year = 2020;
 var markersArray = []
@@ -24,7 +20,6 @@ function clearOverlays() {
 
 function renderChicago() {
   clearOverlays();
-
   $.ajax({
     url: "https://data.cityofchicago.org/resource/ijzp-q8t2.json?primary_type=HOMICIDE&year=" + year,
     type: "GET",
@@ -39,7 +34,7 @@ function renderChicago() {
       var latLng = new google.maps.LatLng(data[i].latitude, data[i].longitude);
       var icon = {
         url: "https://image.flaticon.com/icons/svg/1727/1727571.svg",
-        scaledSize: new google.maps.Size(20, 20),
+        scaledSize: new google.maps.Size(30, 30),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(0, 0)
       };
